@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     var gameDice = Dice()
+    let diceSound = DiceSoundByte(filePath: "dice", ext: "wav")
 
     @IBOutlet weak var rollDiceBtn: UIButton!
     @IBOutlet weak var diceLeft: UIImageView!
@@ -20,11 +21,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         updateDiceFaceImages()
+        diceSound?.prepareSound()
 
     }
     
     @IBAction func rollButton(_ sender: Any) {
         
+        diceSound?.play()
         updateDiceFaceImages()
         
     }
@@ -33,6 +36,13 @@ class ViewController: UIViewController {
         
         diceLeft.image = gameDice.assignDiceFace()
         diceRight.image = gameDice.assignDiceFace()
+        
+    }
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        
+        diceSound?.play()
+        updateDiceFaceImages()
         
     }
     
