@@ -47,16 +47,3 @@ class DiceSoundByte: soundBytePath, soundByteUrl {
         }
     
 }
-
-//guard let fileURL = NSBundle.mainBundle().URLForResource("Euphoria",withExtension: "mp3") else {
-//    showAlert("Can't find Euphoria.mp3 resource")
-//    return
-//}
-//do {
-//    player = try AVAudioPlayer(contentsOfURL: fileURL)
-//    player?.prepareToPlay()
-//}
-//catch {
-//    showAlert("Can't load Euphoria.mp3 resource")
-//}
-
